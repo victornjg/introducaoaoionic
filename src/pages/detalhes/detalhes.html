@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{ heroi.localized_name }}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div text-center>
+    <img [src]="'https://api.opendota.com'+heroi.img" >
+    <br><br>
+    <p [ngSwitch]="heroi.primary_attr">Atributo primário: 
+      <b *ngSwitchCase="'agi'">Agilidade</b>
+      <b *ngSwitchCase="'str'">Força</b>
+      <b *ngSwitchCase="'int'">Inteligência</b>
+    </p>
+    <p>Pontos de vida base: {{ heroi.base_health }}</p>
+    <p>Pontos de mana base: {{ heroi.base_mana }}</p>
+    <p>Velocidade de movimento: {{ heroi.move_speed }}</p>
+  </div>
+</ion-content>

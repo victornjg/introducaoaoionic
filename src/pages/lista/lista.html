@@ -1,0 +1,21 @@
+<ion-header>
+  
+    <ion-navbar>
+      <ion-title>Lista de Heróis do DOTA 2</ion-title>
+      <ion-buttons end>
+        <button ion-button (click)="deslogar()">
+            Sair
+          </button>
+      </ion-buttons>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  
+  <ion-content padding>
+    <ion-list>
+      <button ion-item *ngFor="let heroi of herois" (click)="verDetalhes(heroi)">
+        {{ heroi.localized_name }}
+      </button>
+    </ion-list>
+  </ion-content>
