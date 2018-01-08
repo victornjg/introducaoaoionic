@@ -14,6 +14,8 @@ export class ListaPage {
 
   private herois = [];
 
+  private mensagem;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public servico: ServicoProvider) {
     this.listarHerois();
   }
@@ -30,7 +32,17 @@ export class ListaPage {
   }
 
   verDetalhes(heroi) {
-    this.navCtrl.push(DetalhesPage, { "heroiSelecionado": heroi });
+    //this.navCtrl.push(DetalhesPage, { "heroiSelecionado": heroi });
+
+    // SOLUCAO 1
+    this.navCtrl.push(DetalhesPage, { "heroiSelecionado": heroi, "paginaAnterior": this });
+
+    // SOLUCAO 2
+    // new Promise((resolve, reject) => {
+    //   this.navCtrl.push(DetalhesPage, { "heroiSelecionado": heroi, "resolve": resolve });
+    // }).then(data => {
+    //   this.mensagem = data;
+    // })
   }
 
 }

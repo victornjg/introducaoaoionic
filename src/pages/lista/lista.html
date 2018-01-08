@@ -13,6 +13,7 @@
   
   
   <ion-content padding>
+    <h4>Último herói visto: {{ mensagem }}</h4>
     <ion-list>
       <button ion-item *ngFor="let heroi of herois" (click)="verDetalhes(heroi)">
         {{ heroi.localized_name }}
